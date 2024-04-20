@@ -14,4 +14,9 @@ public class XkcdServiceImpl implements XkcdService {
         return restTemplate.getForObject("https://xkcd.com/info.0.json", XkcdResponse.class);
     }
 
+    @Override
+    public XkcdResponse getPastComic(String comicNum) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject("https://xkcd.com/" + comicNum + "/info.0.json", XkcdResponse.class);
+    }
 }

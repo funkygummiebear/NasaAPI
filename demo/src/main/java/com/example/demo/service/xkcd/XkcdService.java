@@ -6,5 +6,6 @@ public interface XkcdService {
 
     XkcdResponse getCurrentComic();
 
+    XkcdResponse getPastComic(String comicNum);
 
 }

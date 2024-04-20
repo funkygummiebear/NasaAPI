@@ -20,9 +20,9 @@ public class Xkcd {
 
     @GetMapping("/past/{comicNum}") ///xcd/past/2
     public XkcdResponse getComic(@PathVariable String comicNum) {
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject("https://xkcd.com/" + comicNum + "/info.0.json", XkcdResponse.class);
+        return xkcdService.getPastComic(comicNum);
     }
+
     @GetMapping("/pastOpt") ///xcd/past/2
     public XkcdResponse getComicOptional(@RequestParam("comicNum") String comicNum) {
         RestTemplate restTemplate = new RestTemplate();

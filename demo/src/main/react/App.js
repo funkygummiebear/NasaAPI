@@ -1,31 +1,23 @@
 import React, {Component} from "react";
-import ReactDom from "react-dom";
+import ReactDom from "react-dom/client";
 import AppContainer from "/containers/AppContainer";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import xkcdCurrentContainer from "./containers/xkcd/XkcdCurrentContainer";
 
-export class App extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            object:"Ball",
-            count: 0
-        }
+const router = createBrowserRouter([
+    {
+        path:"/",
+        element:<AppContainer />
+    },
+    {
+        path:"/currentxkcdcomic",
+        element:<xkcdCurrentContainer />
     }
+])
 
-    render(){
-        const {object, count} = this.state
-        const increment = () => {
-            this.setState({count: this.state.count + 1})
-        }
-        return(
-            <AppContainer
-                name ="Joe"
-                color="Green"
-                object={object}
-                count={count}
-                increment={increment}
-            />
-            )
-        }
-    }
+ReactDom.createRoot(document.getElementById('app')).render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
+)
 
-ReactDom.render(<App />, document.querySelector("#app"));

@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import ReactDom from "react-dom/client";
 import AppContainer from "/containers/AppContainer";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import xkcdCurrentContainer from "./containers/xkcd/XkcdCurrentContainer";
+import XkcdPastContainer from "./containers/xkcd/XkcdPastContainer";
+import XkcdCurrentContainer from "./containers/xkcd/XkcdCurrentContainer";
 
 const router = createBrowserRouter([
     {
@@ -11,7 +12,11 @@ const router = createBrowserRouter([
     },
     {
         path:"/currentxkcdcomic",
-        element:<xkcdCurrentContainer />
+        element:<XkcdCurrentContainer />
+    },
+    {
+        path:"/pastxkcdcomic",
+        element:<XkcdPastContainer />
     }
 ])
 

@@ -7,14 +7,11 @@ const AppContainer = (props) => {
     const [xkcdCurrent, setXkcdCurrent] = useState({});
 
     useEffect(()=>{
-        axios.get('/xkcd/current')
+        axios.get(`/xkcd/current`)
             .then(function (response) {
                 setXkcdCurrent(response.data)
-                // handle success
-                console.log(response);
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
     },[])

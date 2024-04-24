@@ -6,7 +6,7 @@ import Nav from "../../components/nav/Nav";
 const AppContainer = (props) => {
     const {name, color, object, count, increment} = props
     const [count2, setCount2] = useState(0);
-    const [xkcdPast, setXkcdPast] = useState(null);
+    const [xkcdPast, setXkcdPast] = useState({});
     const [userDefComicNum, setUserDefComicNum] = useState('')
 
     const fetchPastComic = (pastNum) => {

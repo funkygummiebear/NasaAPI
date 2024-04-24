@@ -4,20 +4,33 @@ import AppContainer from "/containers/AppContainer";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import XkcdPastContainer from "./containers/xkcd/XkcdPastContainer";
 import XkcdCurrentContainer from "./containers/xkcd/XkcdCurrentContainer";
+import XkcdArrayRespEx from "./containers/xkcd/XkcdArrayRespEx";
 
 const router = createBrowserRouter([
     {
         path:"/",
-        element:<AppContainer />
+        element:<AppContainer />,
+        children: [
+            {
+                index: true,
+                element: <div> Empty Index </div>
+            },
+            {
+                path:"currentxkcdcomic",
+                element:<XkcdCurrentContainer />
+            },
+            {
+                path:"pastxkcdcomic",
+                element:<XkcdPastContainer />
+            },
+            {
+                path:"example",
+                element:<XkcdArrayRespEx />
+            }
+            // One Nasa API
+        ]
     },
-    {
-        path:"/currentxkcdcomic",
-        element:<XkcdCurrentContainer />
-    },
-    {
-        path:"/pastxkcdcomic",
-        element:<XkcdPastContainer />
-    }
+
 ])
 
 ReactDom.createRoot(document.getElementById('app')).render(

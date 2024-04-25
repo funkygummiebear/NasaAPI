@@ -3,33 +3,27 @@ import axios from 'axios';
 import Nav from "../../components/nav/Nav";
 
 
-const NasaNumberImage = (props) => {
-    const {name, color, object, count, increment} = props
-    const [count2, setCount2] = useState(0);
+const NasaNumberImage = () => {
     const [nasaPast, setNasaPast] = useState({});
-    const [userDefComicNum, setUserDefComicNum] = useState('')
+    const [userDefNasaNum, setUserDefNasaNum] = useState('')
 
-    const fetchPastComic = (pastNum) => {
-        //const defaultNum = xkcdCurrent xkcdCurrent.num ? xkcdCurrent.num : 2500;
+    const fetchPastNasa = (pastNum) => {
         const defaultNum = 2500
-        const count = pastNum || userDefComicNum ? pastNum || userDefComicNum : Math.floor(Math.random() * defaultNum);
-        axios.get(`/numbernasaimage${count}`)
+        const count = pastNum || userDefNasaNum ? pastNum || userDefNasaNum : Math.floor(Math.random() * defaultNum);
+        axios.get(`/numbernasaimage`)
             .then(function (response) {
                 setNasaPast(response.data)
             })
-            .catch(function (error) {
-                console.log(error);
+            .catch(async function (error) {
+                await console.log(error);
             })
     }
-
+if(!nasaPast) return <div />;
     return(
         <>
             <div>
-                <button type="button" className="btn btn-primary" onClick={() => fetchPastComic()}>Get Random Image</button>
-            </div>
-            <div>
-                <input type="text" value={userDefComicNum} onChange={(e) => setUserDefComicNum(e.target.value)} placeholder="Enter in desired NASA image number"/>
-                <button disabled={userDefComicNum ? false : true} type="button" className="btn btn-info" onClick={() => fetchPastComic(userDefComicNum)}>Get User Defined Image</button>
+                <input type="text" value={userDefNasaNum} onChange={(e) => setUserDefNasaNum(e.target.value)} placeholder="Enter in desired NASA image number"/>
+                <button disabled={userDefNasaNum ? false : true} type="button" className="btn btn-info" onClick={() => fetchPastNasa(userDefNasaNum)}>Get Image</button>
             </div>
             <h1>
                 {nasaPast.title}

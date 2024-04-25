@@ -6,6 +6,7 @@ import XkcdPastContainer from "./containers/xkcd/XkcdPastContainer";
 import XkcdCurrentContainer from "./containers/xkcd/XkcdCurrentContainer";
 import XkcdArrayRespEx from "./containers/xkcd/XkcdArrayRespEx";
 import NasaSingleImage from "./containers/nasa/NasaSingleImage";
+import NasaNumberImage from "./containers/nasa/NasaNumberImage";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path:"single",
                 element:<NasaSingleImage />
+            },
+            {
+                path:"number",
+                element:<NasaNumberImage />
             }
             // One Nasa API
         ]

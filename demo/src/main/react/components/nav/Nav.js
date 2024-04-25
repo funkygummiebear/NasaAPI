@@ -18,15 +18,22 @@ const Nav = (props) => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="currentxkcdcomic">Current Comic</a>
+                                <a className="nav-link active" aria-current="page" href="currentxkcdcomic">Current
+                                    Comic</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="pastxkcdcomic" >Past Comic</a>
+                                <a className="nav-link active" href="pastxkcdcomic">Past Comic</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="example">Example</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="single">Nasa Single Image</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            )
+    )
 }
 export default Nav

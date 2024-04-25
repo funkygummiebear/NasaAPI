@@ -5,6 +5,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import XkcdPastContainer from "./containers/xkcd/XkcdPastContainer";
 import XkcdCurrentContainer from "./containers/xkcd/XkcdCurrentContainer";
 import XkcdArrayRespEx from "./containers/xkcd/XkcdArrayRespEx";
+import NasaSingleImage from "./containers/nasa/NasaSingleImage";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path:"example",
                 element:<XkcdArrayRespEx />
+            },
+            {
+                path:"single",
+                element:<NasaSingleImage />
             }
             // One Nasa API
         ]

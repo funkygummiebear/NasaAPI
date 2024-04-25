@@ -13,7 +13,7 @@ const NasaNumberImage = (props) => {
         //const defaultNum = xkcdCurrent xkcdCurrent.num ? xkcdCurrent.num : 2500;
         const defaultNum = 2500
         const count = pastNum || userDefComicNum ? pastNum || userDefComicNum : Math.floor(Math.random() * defaultNum);
-        axios.get(`/numbernasaimage/${count}`)
+        axios.get(`/numbernasaimage${count}`)
             .then(function (response) {
                 setNasaPast(response.data)
             })

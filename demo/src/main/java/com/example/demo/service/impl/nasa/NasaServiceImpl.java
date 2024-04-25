@@ -11,6 +11,7 @@ public class NasaServiceImpl implements NasaService {
 
     private final String NASA_API = "https://api.nasa.gov/planetary/apod?api_key=RzyFxHkZBTcmrc4kefhp7pgaF0PCCmxggWzjA76P";
 
+    @Override
     public NasaApiResponse getNasaSingle(String date, String thumbs) {
         RestTemplate restTemplate = new RestTemplate();
         String params = "";
@@ -24,11 +25,13 @@ public class NasaServiceImpl implements NasaService {
         return restTemplate.getForObject(NASA_API + params, NasaApiResponse.class);
     }
 
+    @Override
     public NasaApiResponse[] getNumNasaMulti(String count, String thumbs){
         String params = "&count=" + count + (thumbs != null ? "&thumbs=" + thumbs : "");
         return getData(params);
     }
 
+    @Override
     public NasaApiResponse[] getDateRangeNasaMulti(String thumbs, String end_date, String start_date){
         String params = "&start_date=" + start_date + (thumbs != null ? "&thumbs=" + thumbs : "");
         if(end_date != null){

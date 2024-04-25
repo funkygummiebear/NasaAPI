@@ -16,17 +16,16 @@ const NasaSingleImage = () => {
             })
     },[])
 
-    return(
-        <>
-            <div>
-                <h1>{nasaCurrent.date}</h1>
-            </div>
-            <div>
-                <p>
-                    {nasaCurrent.title}
-                </p>
-            </div>
-        </>
-    )
+    if (!nasaCurrent) return <div />;
+        return(
+            <>
+                <div>
+                    <h1>{nasaCurrent.title}</h1>
+                </div>
+                <div>
+                    <img src={nasaCurrent.url} alt={nasaCurrent.hdurl}/>
+                </div>
+            </>
+        )
 }
 export default NasaSingleImage

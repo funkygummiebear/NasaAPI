@@ -27,17 +27,6 @@ const XkcdArrayRespEx = () => {
                     </div>
                 )
                 })}
-            // {/*<div>*/}
-            // {/*    <h1>{xkcdCurrent.title}</h1>*/}
-            // {/*</div>*/}
-            // {/*<div>*/}
-            // {/*    <img src={xkcdCurrent.img} alt={xkcdCurrent.alt ? xkcdCurrent.alt : "No Xkcd image for today"}/>*/}
-            // {/*</div>*/}
-            // {/*<div>*/}
-            // {/*    <p>*/}
-            // {/*        {xkcdCurrent.transcript}*/}
-            // {/*    </p>*/}
-            // {/*</div>*/}
         </div>
     )
 }

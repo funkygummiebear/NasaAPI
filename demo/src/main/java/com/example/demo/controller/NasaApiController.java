@@ -25,6 +25,7 @@ public class NasaApiController {
     @GetMapping("/numbernasaimage")
     public NasaApiResponse[] getNumNasaMulti(@RequestParam() String count,
                                              @RequestParam(required = false) String thumbs){
+        System.out.println("Hello and Welcome to NASA Astronomy Picture of the Day Past");
         return nasaService.getNumNasaMulti(count, thumbs);
     }
 

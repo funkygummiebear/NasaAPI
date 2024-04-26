@@ -33,6 +33,9 @@ const Nav = (props) => {
                             <li className="nav-item">
                                 <a className="nav-link active" href="number">Nasa Number Image</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link active" href="multi">Nasa Multi Image</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

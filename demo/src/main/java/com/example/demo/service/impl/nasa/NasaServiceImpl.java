@@ -27,6 +27,7 @@ public class NasaServiceImpl implements NasaService {
 
     @Override
     public NasaApiResponse[] getNumNasaMulti(String count, String thumbs){
+        RestTemplate restTemplate = new RestTemplate();
         String params = "&count=" + count + (thumbs != null ? "&thumbs=" + thumbs : "");
         return getData(params);
     }

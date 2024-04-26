@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <div> Empty Index </div>
+                element: <div> Hello and Welcome to NASA Astronomy Picture of the Day by Heather Smith </div>
             },
             {
                 path:"currentxkcdcomic",

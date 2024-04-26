@@ -1,23 +1,11 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import Nav from "../../components/nav/Nav";
-
+import {useStore} from "../../resources/store.js"
 
 const NasaSingleImage = () => {
-    const [nasaCurrent, setNasaCurrent] = useState({});
+    const nasaCurrent = useStore((state) => state.nasaSingleImage);
 
-    useEffect(()=>{
-        axios.get(`/singlenasaimage`)
-            .then(function (response) {
-                setNasaCurrent(response.data)
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    },[])
-
-
-    if (!nasaCurrent) return <div />;
         return(
             <>
                 <div>

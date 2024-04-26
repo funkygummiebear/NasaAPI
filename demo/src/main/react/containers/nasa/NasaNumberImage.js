@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import Nav from "../../components/nav/Nav";
+import {useStore} from "../../resources/store";
 
 
 const NasaNumberImage = (params) => {
@@ -8,6 +9,8 @@ const NasaNumberImage = (params) => {
     const [count2, setCount2] = useState(0);
     const [nasaPast, setNasaPast] = useState({});
     const [userDefComicNum, setUserDefComicNum] = useState('')
+    const nasaSingleImage = useStore((state) => state.nasaSingleImage)
+    console.log(nasaSingleImage)
 
     const fetchPastComic = (nasaNum) => {
         const defaultNum = 10
@@ -24,8 +27,15 @@ const NasaNumberImage = (params) => {
     return(
         <>
             <div>
-                <input type="text" value={userDefComicNum} onChange={(e) => setUserDefComicNum(e.target.value)} placeholder="Enter in desired NASA image number"/>
-                <button type={userDefComicNum ? false : true} type="button" className="btn btn-info" onClick={() => fetchPastComic(userDefComicNum)}>Get User Defined Image</button>
+                <button type="button" className="btn btn-primary" onClick={() => fetchPastComic()}>Get Random Image
+                </button>
+            </div>
+            <div>
+                <input type="text" value={userDefComicNum} onChange={(e) => setUserDefComicNum(e.target.value)}
+                       placeholder="Enter in desired NASA image number"/>
+                <button type={userDefComicNum ? false : true} type="button" className="btn btn-info"
+                        onClick={() => fetchPastComic(userDefComicNum)}>Get User Defined Image
+                </button>
             </div>
             <h1>
                 {nasaPast.title}
